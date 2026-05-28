@@ -29,7 +29,7 @@ class AccountScreen extends StatelessWidget {
             SizedBox(width: 15),
             Center(
               child: Text(
-                'Afsar Hossen',
+                'Farid Nagy',
                 style: GoogleFonts.gabarito(
                   fontSize: 18,
                   color: AppColors.textColor2,
@@ -38,7 +38,7 @@ class AccountScreen extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'email@eraaSoft.com',
+                'farid.nagy@eraaSoft.com',
                 style: GoogleFonts.poppins(
                   fontSize: 16,
                   color: AppColors.textColor2.withOpacity(0.7),

@@ -3,9 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar/Core/app_coloer.dart';
 import 'signup_screen.dart';
+import '../../profile/account_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
+
+  void opensingupscreen(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SignupScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignupScreen()),
+                    MaterialPageRoute(builder: (context) => AccountScreen()),
                   );
                 },
                 child: Text(
@@ -90,14 +98,28 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            Center(
-              child: Text(
-                'Don’t have an account? Singup',
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  color: AppColors.textColor2,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Don’t have an account?',
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                    color: AppColors.textColor2,
+                  ),
                 ),
-              ),
+                GestureDetector(
+                  onTap: () => opensingupscreen(context),
+                  child: Text(
+                    'Sign up',
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: AppColors.primaryColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
